@@ -1,0 +1,19 @@
+@JwtDemo_HostAddress = http://localhost:5062
+@access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTcyNDM5NzkyMywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1NjAyIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1NjAyIn0.8aUrSSEY4TJfcK6QjYLKjKFw1LEjDkfgB3nyMlbDvx8
+
+GET {{JwtDemo_HostAddress}}/hello/
+Accept: application/json
+Authorization: Bearer {{access_token}}
+
+###
+POST {{JwtDemo_HostAddress}}/login/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+###
+GET {{JwtDemo_HostAddress}}/Hs256?data=Hello&key=123
+Accept: application/json
